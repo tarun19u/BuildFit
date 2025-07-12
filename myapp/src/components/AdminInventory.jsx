@@ -42,7 +42,9 @@ const AdminInventory = () => {
   const loadInventory = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/inventory');
+      const API_BASE_URL = 'https://buildfit.onrender.com/api';
+
+      const response = await fetch(`${API_BASE_URL}/inventory`);
       const data = await response.json();
       if (data.success) {
         setInventory(data.inventory);

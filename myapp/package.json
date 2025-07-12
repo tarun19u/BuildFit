@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack",
+    "build": "webpack --mode=production",
+    "build:dev": "webpack",
     "server": "nodemon server/server.js",
     "dev": "concurrently \"npm run server\" \"npm start\""
   },
@@ -40,6 +41,7 @@
     "@babel/preset-react": "^7.27.1",
     "babel-loader": "^10.0.0",
     "concurrently": "^9.2.0",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",

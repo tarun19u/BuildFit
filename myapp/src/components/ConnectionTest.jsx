@@ -9,12 +9,14 @@ const ConnectionTest = () => {
   const testConnection = async () => {
     setLoading(true);
     setResult(null);
-    
+
     try {
       console.log('🧪 Testing frontend to backend connection...');
-      
+
+      const API_BASE_URL = 'https://buildfit.onrender.com/api';
+
       // Test the simple test endpoint
-      const response = await axios.get('http://localhost:5000/api/test');
+      const response = await axios.get(`${API_BASE_URL}/test`);
       
       console.log('✅ Connection successful:', response.data);
       setResult({

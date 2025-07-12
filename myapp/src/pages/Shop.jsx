@@ -44,7 +44,7 @@ const Shop = () => {
 
   const checkInventory = async (productId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/inventory/${productId}`);
+      const res = await fetch(`https://buildfit.onrender.com/api/inventory/${productId}`);
       return await res.json();
     } catch {
       return { available: false, quantity: 0, isLowStock: false };
@@ -54,7 +54,7 @@ const Shop = () => {
   const loadInventory = async () => {
     setLoadingStock(true);
     try {
-      const res = await fetch('http://localhost:5000/api/inventory');
+      const res = await fetch('https://buildfit.onrender.com/api/inventory');
       const data = await res.json();
       if (data.success) setInventory(data.inventory);
     } catch (e) {

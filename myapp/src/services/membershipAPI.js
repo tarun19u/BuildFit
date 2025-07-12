@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+// API base URL - using deployed Render backend
+const API_BASE_URL = 'https://buildfit.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -30,7 +31,7 @@ api.interceptors.response.use(
     console.error('❌ API Response Error:', error.response?.data || error.message);
     console.error('❌ Full Error:', error);
     if (error.code === 'ERR_NETWORK') {
-      console.error('❌ Network Error: Cannot connect to backend server. Make sure server is running on http://localhost:5000');
+      console.error(`❌ Network Error: Cannot connect to backend server. Make sure server is running on ${API_BASE_URL}`);
     }
     return Promise.reject(error);
   }
