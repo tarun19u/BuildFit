@@ -6,7 +6,6 @@ const ProtectedRoute = ({ children, requireAuth = true }) => {
   const { user, loading, isAuthenticated } = useAuth();
   const location = useLocation();
 
-  // Show loading spinner while checking auth
   if (loading) {
     return (
       <Box 

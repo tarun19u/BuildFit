@@ -25,11 +25,9 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <CssBaseline />
-        {/* NavBar is always visible */}
         <NavBar />
         <Container sx={{ mt: 4 }}>
           <Routes>
-            {/* Public routes - no authentication required, redirect to home if already logged in */}
             <Route path="/register" element={
               <ProtectedRoute requireAuth={false}>
                 <Register />
@@ -46,7 +44,6 @@ function App() {
               </ProtectedRoute>
             } />
 
-            {/* Protected routes - authentication required */}
             <Route path="/home" element={
               <ProtectedRoute>
                 <Home />
